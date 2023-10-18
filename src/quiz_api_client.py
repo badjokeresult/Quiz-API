@@ -13,13 +13,13 @@ class QuizAPIClient:
         self.db_worker = DbWorker()
 
     def get_response_from_url(self, questions_num: int):
+        questions_left = questions_num
         while True:
-            response = requests.get(self.url + str(questions_num))
+            response = requests.get(self.url + str(questions_left))
             if response.status_code != 200:
                 raise ValueError("Error occured during requesting outer API-service")
 
             questions = json.loads(response.text)
-            questions_left = 0
             last_inserted_question = None
             for question in questions:
                 saved_category = self.db_worker.get_category(int(question["category"]["id"]))
@@ -30,6 +30,7 @@ class QuizAPIClient:
                 if not saved_question:
                     self.db_worker.insert_question(question)
                     last_inserted_question = json.dumps(question)
+                    questions_left -= 1
                 else:
                     questions_left += 1
 
