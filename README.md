@@ -17,7 +17,7 @@
 
 ### Example:
 1. Let's create a POST-request with the JSON-body through a Postman.
- ![image](https://github.com/badjokeresult/Quiz-API/assets/73688300/50353e30-3c2d-4a95-b753-58fb11ba3719)
+![img_1.png](img_1.png)
 2. Send it.
 3. As a result, we get a text of a question.
-![image](https://github.com/badjokeresult/Quiz-API/assets/73688300/97e14eec-f212-4b84-b437-dd3a950eedc5)
+![img.png](img.png)
