@@ -1,7 +1,7 @@
 import requests
 import json
 
-from src.db_worker import DbWorker
+from db_worker import DbWorker
 
 
 API_URL = "https://jservice.io/api/random?count="
@@ -36,4 +36,4 @@ class QuizAPIClient:
             if questions_left == 0:
                 break
 
-        return last_inserted_question
+        return json.loads(last_inserted_question)["question"]

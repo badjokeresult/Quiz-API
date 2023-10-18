@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from models import *
 
 
-DB_CONN_STR = "postgresql://quizuser:5%6J2;ag@localhost:5432/quizdb"
+DB_CONN_STR = "postgresql://quizuser:5%6J2;ag@postgresql:5432/quizdb"
 
 
 class DbWorker:
