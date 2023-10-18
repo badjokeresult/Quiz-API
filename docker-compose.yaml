@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   web:
+    container_name: API
     build:
       context: .
       dockerfile: Dockerfile
@@ -25,6 +26,7 @@ services:
       POSTGRES_PASSWORD: "5%6J2;ag"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - quizdb-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
