@@ -6,10 +6,7 @@
 	1. Run `git clone https://github.com/badjokeresult/Quiz-API.git`
 	2. `cd Quiz-API`
 	3. `docker-compose up -d` (should be executed with root-privileges)
-	4. Run `psql -h localhost -p 5432 -U quizuser`
-	5. Enter the password provided in `docker-compose.yaml`
-	6. When getting into psql console, run `\i init.sql`
-	7. On this step everything is up-to-date
+	4. On this step everything is up-to-date
 
 ### Usage guide:
 	This API provides only one POST-method.
