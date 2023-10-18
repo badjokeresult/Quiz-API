@@ -36,4 +36,4 @@ class QuizAPIClient:
             if questions_left == 0:
                 break
 
-        return json.loads(last_inserted_question)["question"]
+        return json.loads(last_inserted_question)
