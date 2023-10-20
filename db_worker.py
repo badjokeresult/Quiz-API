@@ -10,10 +10,10 @@ SESSION_MAKER = sessionmaker(autoflush=False, autocommit=False, bind=DB_ENGINE)
 
 
 def manage_db_context(func):
-    def wrapper(*args):
+    def wrapper(self, *args):
         db = SESSION_MAKER()
         try:
-            func(db, *args)
+            func(self, db, *args)
             db.commit()
         except Exception as e:
             db.rollback()

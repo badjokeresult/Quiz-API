@@ -11,7 +11,6 @@ class Request(BaseModel):
 
 
 @app.post("/api/v1/quiz/get_questions")
-async def request_questions(request: Request) -> str:
+async def request_questions(request: Request) -> dict:
     quiz_api_client = QuizAPIClient()
-    print(quiz_api_client)
     return quiz_api_client.get_response_from_url(request.questions_num)
